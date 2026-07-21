@@ -1,59 +1,63 @@
-# Hi, I'm Belhadj 👋
+# Belhadj Kessas
 
-**Platform engineer — GitOps · Kubernetes · IoT/edge · RF.**
-I run everything I build as code, on infrastructure I operate myself.
+### Senior DevOps & Platform Infrastructure Engineer
+**I build the infrastructure cities run on** — sovereign, open source end to end,
+with no hyperscaler dependency and no proprietary lock-in.
 
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=white)
-![Argo CD](https://img.shields.io/badge/Argo%20CD-EF7B4D?logo=argo&logoColor=white)
-![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?logo=cloudflare&logoColor=white)
+![Argo CD](https://img.shields.io/badge/GitOps-Argo%20CD-EF7B4D?logo=argo&logoColor=white)
+![Cilium](https://img.shields.io/badge/Cilium-eBPF-F8C517?logo=cilium&logoColor=black)
+![Ceph](https://img.shields.io/badge/Rook–Ceph-EF5C55?logo=ceph&logoColor=white)
+![OpenTofu](https://img.shields.io/badge/OpenTofu-FFDA18?logo=opentofu&logoColor=black)
 ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
 ![Rust](https://img.shields.io/badge/Rust-000000?logo=rust&logoColor=white)
-![GNU Radio](https://img.shields.io/badge/GNU%20Radio-SDR-blue)
 
-## What I run
+---
 
-A self-hosted production platform, 100 % GitOps — most of it lives in 20+
-private repos, all operated the same way:
+I design and operate digital infrastructure that organizations own outright:
+bare-metal Linux, Kubernetes and GitOps, without vendor lock-in. Everything is
+reconciled from Git — no manual changes, one source of truth.
 
 ```mermaid
 flowchart LR
-    A[git push] --> B[CI: tests · ARM64 build · Trivy · SBOM]
-    B --> C[GHCR — immutable sha-pinned image]
-    C --> D[CI promotes the tag into the manifests]
-    D --> E[Argo CD auto-sync]
-    E --> F[K3s cluster<br/>x86 control plane + Jetson Orin GPU node]
+    A[git push] --> B[CI: tests · build · scan · SBOM]
+    B --> C[Registry — immutable, signed image]
+    C --> D[Argo CD auto-sync]
+    D --> E[Bare-metal Kubernetes<br/>owned, sovereign, observable]
 ```
 
-- **K3s cluster** (x86 + NVIDIA Jetson Orin edge node) reconciled by **Argo CD** —
-  no manual `kubectl apply`, Git is the only source of truth
-- **Supply chain**: immutable sha-pinned images, Trivy scans, SBOMs,
-  Sealed Secrets — zero plaintext secrets in Git
-- **Observability**: Prometheus / Grafana / Alertmanager with push alerts
-  in under a minute when a nightly job fails
-- **Workloads**: AI content pipelines on CUDA (edge GPU), autonomous agents,
-  LoRaWAN/IoT stack (ChirpStack, MQTT), SaaS experiments on Cloudflare Workers
+## 🏙️ Flagship — Montpellier Méditerranée Métropole Smart City
 
-## Focus areas
+A live municipal platform serving **500,000+ citizens** with **100,000+ IoT
+sensors** across air quality, waste, water, energy and mobility — four
+Kubernetes clusters, GitOps-managed, on entirely owned infrastructure.
 
-- **GitOps & platform engineering** — Argo CD, K3s, kustomize, GitHub Actions,
-  hardened multi-arch builds (ARM64/Jetson)
-- **IoT & Smart City** — LoRaWAN, ChirpStack, MQTT, edge computing, open data
-- **RF / SDR** — GNU Radio, HackRF, spectrum tooling
-- **Security** — supply-chain hardening, scope-gated automation, vulnerability
-  research
-- **AI operations** — LLM agents run like any other workload: pinned models,
-  measured token budgets, human approval gates on anything public-facing
+## What I work with
+
+- **Kubernetes & platform** — RKE2, Rancher, MetalLB, Rook-Ceph, Cilium (eBPF),
+  Envoy Gateway, Helm
+- **GitOps & IaC** — Argo CD, GitLab CI/CD, OpenTofu, Terraform, Ansible
+- **IoT & networking** — LoRaWAN at scale, RF planning, VLAN segmentation,
+  fleet provisioning, OTA updates
+- **Observability & SRE** — Mimir, Loki, Grafana, Grafana Alloy, Zabbix
+- **Programming** — Python (Django), Rust, Bash
+- **Exploring** — computer vision (YOLO), GPU scheduling, Kubeflow
 
 ## Open source
 
-- [**Spectra**](https://github.com/beladjioo/Spectra) — open RF/SDR learning
-  platform: GNU Radio & HackRF labs
+- [**OpenHertz / Spectra**](https://github.com/beladjioo/Spectra) — gamified
+  radio learning over SDR: browser-based decoding, Rust/TypeScript DSP, and
+  amateur-radio exam prep
 - [**chirpstack-v4-kubernetes**](https://github.com/beladjioo/chirpstack-v4-kubernetes) —
-  ChirpStack v4 deployment on Kubernetes
+  ChirpStack v4 LoRaWAN server on Kubernetes
 
-## Working with me
+## Certifications
 
-I take on freelance work: GitOps/Kubernetes platform builds, IoT & LoRaWAN
-deployments, and cluster audits (GitOps hygiene, supply chain, observability).
+- **CKA** — Certified Kubernetes Administrator *(in progress, 2026 · CNCF)*
 
-🌍 [yannisbk.com](https://yannisbk.com)
+## Let's talk
+
+Available for freelance work: sovereign Kubernetes/GitOps platform builds,
+LoRaWAN & IoT deployments, and infrastructure audits.
+
+🌐 [belhadj.dev](https://belhadj.dev) · 💼 [LinkedIn](https://linkedin.com/in/belhadj-k) · ✉️ contact@belhadj.dev · 📍 Montpellier, France
