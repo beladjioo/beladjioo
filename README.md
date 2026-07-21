@@ -57,7 +57,4 @@ Kubernetes clusters, GitOps-managed, on entirely owned infrastructure.
 
 ## Let's talk
 
-Available for freelance work: sovereign Kubernetes/GitOps platform builds,
-LoRaWAN & IoT deployments, and infrastructure audits.
-
-🌐 [belhadj.dev](https://belhadj.dev) · 💼 [LinkedIn](https://linkedin.com/in/belhadj-k) · ✉️ contact@belhadj.dev · 📍 Montpellier, France
+🌐 [belhadj.dev](https://belhadj.dev) · 💼 [LinkedIn](https://linkedin.com/in/belhadj-k) · ✉️ contact@belhadj.dev
